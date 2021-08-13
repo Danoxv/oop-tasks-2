@@ -1,33 +1,68 @@
 <?php
 
-interface iСube
+//interface iСube
+//{
+//    public function __construct($a);
+//
+//    public function getVolume();
+//
+//    public function getSurface();
+//}
+//
+//class Cube implements iCube
+//{
+//    private $a;
+//
+//    public function __construct($a)
+//    {
+//        $this->a = $a;
+//    }
+//
+//    public function getVolume()
+//    {
+//        return $this->a ** 3;
+//    }
+//
+//    public function getSurface()
+//    {
+//        return ($this->a ** 2) * 6;
+//    }
+//
+//}
+
+
+interface iUser
 {
-    public function __construct($a);
 
-    //методы для получения объема куба и площади поверхности.
-    public function getVolume();
+    public function __construct(string $name, int $age);
 
-    public function getSurface();
-    //Площадь поверхности куба равна сумме площадей всех его шести граней .
+    public function getName(): string
+
+    public function getAge(): int;
+
 }
 
-class Cube implements iCube
+class User implements iUser
 {
-    private $a;
 
-    public function __construct($a)
+    private string $name;
+    private int $age;
+
+    public function __construct(string $name, int $age)
     {
-        $this->a = $a;
+
+        $this->name = $name;
+        $this->age = $age;
     }
 
-    public function getVolume()
+    public function getName(): string
     {
-        return $this->a ** 3;
+        return $this->name;
     }
 
-    public function getSurface()
+    public function getAge(): int
     {
-        return ($this->a ** 2) * 6;
+        return $this->age;
     }
 
 }
