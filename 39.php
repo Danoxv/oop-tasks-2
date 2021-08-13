@@ -27,7 +27,7 @@ class Cube implements iCube
 
     public function getSurface()
     {
-        return ($this->a ** 2) * 2;
+        return ($this->a ** 2) * 6;
     }
 
 }
