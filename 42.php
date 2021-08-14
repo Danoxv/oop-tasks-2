@@ -26,79 +26,79 @@ interface  Circle
 }
 
 
-//class Rectangle implements Figure, Tetragon
-//{
-//    private int $a;
-//    private int $b;
-//    private int $c;
-//    private int $d;
-//
-//    public function __construct(int $a, int $b, int $c, int $d)
-//    {
-//        $this->a = $a;
-//        $this->b = $b;
-//        $this->c = $c;
-//        $this->d = $d;
-//    }
-//
-//    public function getSquare(): int
-//    {
-//        return $this->a * $this->b;
-//    }
-//
-//    public function getPerimeter(): int
-//    {
-//        return 2 * ($this->a + $this->b);
-//    }
-//
-//
-//    public function getA()
-//    {
-//        return $this->a;
-//    }
-//
-//    public function getB()
-//    {
-//        return $this->b;
-//    }
-//
-//    public function getC()
-//    {
-//        return $this->c;
-//    }
-//
-//    public function getD()
-//    {
-//        return $this->d;
-//    }
-//}
+class Rectangle implements Figure, Tetragon
+{
+    private  $a;
+    private  $b;
+
+
+    public function __construct(int $a, int $b, )
+    {
+        $this->a = $a;
+        $this->b = $b;
+
+    }
+
+    public function getSquare(): int
+    {
+        return $this->a * $this->b;
+    }
+
+    public function getPerimeter(): int
+    {
+        return 2 * ($this->a + $this->b);
+    }
+
+
+    public function getA(): int
+    {
+        return $this->a;
+    }
+
+    public function getB(): int
+    {
+        return $this->b;
+    }
+
+    public function getC(): int
+    {
+        return $this->a;
+    }
+
+    public function getD()
+    {
+        return $this->b;
+    }
+}
 
 class Disk implements Figure, Circle
 {
- private int $square = 100;
- private int $perimeter = 80;
- private int $radius = 50;
- private int $diameter = 25;
+    const PI = 3.14;
+    public $r;
 
+    public function __construct($r)
+    {
+        $this->r = $r;
+    }
 
     public function getSquare(): int|float
     {
-       return $this->square;
+        return self::PI * $this->r ** 2;
     }
 
     public function getPerimeter(): int|float
     {
-        return $this->perimeter;
+        return 2 * self::PI * $this->r;
     }
 
     public function getRadius(): int|float
     {
-        return $this->radius;
+        return $this->r;
     }
 
     public function getDiameter(): int|float
     {
-        return $this->diameter;
+        return 2 * $this->r;
     }
 }
 
