@@ -78,10 +78,10 @@ class Rectangle implements Figure
     }
 }
 
-$Quadrate = new Quadrate(5);
-$Rectangle = new Rectangle(3, 4);
-$Cube = new Cube(4);
-$arr = [$Quadrate, $Rectangle, $Cube];
+$quadrate = new Quadrate(5);
+$rectangle = new Rectangle(3, 4);
+$cube = new Cube(4);
+$arr = [$quadrate, $rectangle, $cube];
 foreach ($arr as $figure) {
     if ($figure instanceof Figure) {
          echo $figure->getSquare().'<br/>';
