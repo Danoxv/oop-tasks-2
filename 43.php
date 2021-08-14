@@ -61,6 +61,5 @@ class Programmer extends Employee implements iProgrammer
 }
 
 $programmer = new Programmer('Denis', 500, ['PHP', 'JS']);
-$programmer->addLang('C#');
 var_dump($programmer->getLangs());
 ?>
