@@ -2,7 +2,7 @@
 
 interface iProgrammer
 {
-    public function __construct($name, $salary);
+    public function __construct($name, $salary,$langs);
 
     public function getName();
 
@@ -15,8 +15,8 @@ interface iProgrammer
 
 class Employee
 {
-    private $name;
-    private $salary;
+    protected $name;
+    protected $salary;
 
     public function __construct($name, $salary)
     {
@@ -38,17 +38,30 @@ class Employee
 class Programmer extends Employee implements iProgrammer
 {
     private $lang;
-    private array $arr = [];
+    private $arr = [];
 
-    public function getLangs()
+    public function __construct($name, $salary, $langs)
     {
-        return $this->lang;
+        foreach ($langs as $lang) {
+            $this->arr[]= $lang;
+        }
+
+        parent::__construct($name, $salary);
+
+    }
+
+    public function getLangs(): array
+    {
+        return $this->arr;
     }
 
     public function addLang($lang)
     {
-        $this->arr = $lang;
+        $this->arr[] = $lang;
     }
 }
 
+$programmer = new Programmer('Denis', 500, ['PHP', 'JS']);
+$programmer->addLang('C#');
+var_dump($programmer->getLangs());
 ?>
