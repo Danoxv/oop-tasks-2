@@ -1,27 +1,27 @@
 <?php
 
-interface figure
+interface Figure
 {
     public function getSquare();
 
     public function getPerimeter();
 }
 
-class Disk implements figure
+class Disk implements Figure
 {
     const PI = 3.14;
     /**
      * @var int
      */
-    public  int $R;
+    public  int $r;
 
     /**
      * Disk constructor.
      * @param int $R
      */
-    public function __construct( int $R)
+    public function __construct( int $r)
     {
-        $this->R = $R;
+        $this->r = $r;
 
     }
 
@@ -30,7 +30,7 @@ class Disk implements figure
      */
     public function getSquare(): int|float
     {
-        return self::PI * $this->R * $this->R;
+        return self::PI * $this->r * $this->r;
 
     }
 
@@ -39,7 +39,7 @@ class Disk implements figure
      */
     public function getPerimeter(): int|float
     {
-        return 2 * (self::PI) * $this->R;
+        return 2 * (self::PI) * $this->r;
 
     }
 }

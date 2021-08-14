@@ -2,7 +2,7 @@
 
 interface iProgrammer
 {
-    public function __construct($name, $salary,$langs);
+    public function __construct($name, $salary, $langs);
 
     public function getName();
 
@@ -37,13 +37,12 @@ class Employee
 
 class Programmer extends Employee implements iProgrammer
 {
-    private $lang;
     private $arr = [];
 
     public function __construct($name, $salary, $langs)
     {
         foreach ($langs as $lang) {
-            $this->arr[]= $lang;
+            $this->arr[] = $lang;
         }
 
         parent::__construct($name, $salary);

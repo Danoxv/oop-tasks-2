@@ -133,9 +133,9 @@ class Rectangle extends Figure
     }
 }
 
-$Rectangle = new Rectangle(4, 4);
-echo $Rectangle->getSquare();
-echo $Rectangle->getPerimeter();
+$rectangle = new Rectangle(4, 4);
+echo $rectangle->getSquare();
+echo $rectangle->getPerimeter();
 
-echo $Rectangle->getSquarePerimeterSum();
+echo $rectangle->getSquarePerimeterSum();
 ?>
